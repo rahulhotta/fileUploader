@@ -34,6 +34,18 @@ The app uses a mock upload API (`https://httpbin.org/post`) and is designed with
 
 <img width="386" height="149" alt="image" src="https://github.com/user-attachments/assets/bb8bd97b-d820-4370-aab3-b91c9afcf28f" />
 
+The application follows a component-based architecture with a clear separation between business logic and UI rendering.
+
+All file upload logic (file handling, progress tracking, cancel/reset actions, and toast notifications) is centralized in a custom React hook (useFileUploader).
+UI responsibilities are divided into small, reusable presentational components such as DropZone, FileList, FileItem, and Toaster, while FileUploaderContainer acts as the main orchestration component that connects the hook with the UI.
+
+Data flows in a unidirectional manner from the hook to the UI components via props, and user actions (file selection, cancel, reset) flow back through callback functions. This structure improves maintainability, reusability, and scalability of the application.
+
+## Access the poject here
+https://fileuploader-rahul.netlify.app/
+
+
+Hosted using netlify
 
 ## ▶️ Instructions to Run the App
 
