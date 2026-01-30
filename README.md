@@ -32,13 +32,8 @@ The app uses a mock upload API (`https://httpbin.org/post`) and is designed with
 
 ## Project flow
 
-App
- └── FileUploaderContainer
-      ├── DropZone
-      ├── FileList
-      │     └── FileItem (repeated for each file)
-      └── Toaster
-useFileUploader (custom hook)
+<img width="386" height="149" alt="image" src="https://github.com/user-attachments/assets/bb8bd97b-d820-4370-aab3-b91c9afcf28f" />
+
 
 ## ▶️ Instructions to Run the App
 
