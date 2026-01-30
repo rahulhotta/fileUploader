@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
@@ -6,12 +7,25 @@ interface Props {
 }
 
 export const DropZone: React.FC<Props> = ({ onFilesSelected }) => {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleFiles = (files: FileList | null) => {
+    if (!files) return;
+
+    onFilesSelected(files);
+
+    
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   return (
     <Box
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => {
         e.preventDefault();
-        onFilesSelected(e.dataTransfer.files);
+        handleFiles(e.dataTransfer.files);
       }}
       sx={{
         border: "2px dashed #1976d2",
@@ -22,11 +36,12 @@ export const DropZone: React.FC<Props> = ({ onFilesSelected }) => {
       }}
     >
       <input
+        ref={fileInputRef}  
         type="file"
         multiple
         hidden
         id="fileInput"
-        onChange={(e) => e.target.files && onFilesSelected(e.target.files)}
+        onChange={(e) => handleFiles(e.target.files)}
       />
 
       <label htmlFor="fileInput">
