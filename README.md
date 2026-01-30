@@ -41,6 +41,9 @@ UI responsibilities are divided into small, reusable presentational components s
 
 Data flows in a unidirectional manner from the hook to the UI components via props, and user actions (file selection, cancel, reset) flow back through callback functions. This structure improves maintainability, reusability, and scalability of the application.
 
+## Access the poject here
+https://fileuploader-rahul.netlify.app/
+Hosted using netlify
 
 ## ▶️ Instructions to Run the App
 
