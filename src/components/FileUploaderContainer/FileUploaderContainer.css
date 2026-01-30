@@ -1,34 +1,89 @@
-.file-uploader-container{
-    /* max-width: 700px; */
-    /* margin: 30px auto;
-    margin-bottom: 0; */
+.file-uploader-container {
     width: 70vw;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
     overflow-y: auto;
-}
-
-.file-uploader-card{
-    padding-top: 2rem;
-    /* max-height: 80vh;
-    overflow-y: scroll; */
-    background-color: white;
+  }
+  
+  /* Card */
+  .file-uploader-card {
     padding: 30px;
+    background-color: rgb(247, 247, 247);
     color: black;
-    border-radius: 10px;
-}
-.file-upload-header {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  
+  /* Header */
+  .file-upload-header {
     display: flex;
     align-items: center;
     width: 100%;
     position: relative;
+    padding: 8px 0;
   }
   
+  /* Title */
   .file-upload-title {
     flex: 1;
     text-align: center;
+    font-size: 1.5rem;
   }
   
+  /* Reset button (desktop) */
   .reset-btn {
     position: absolute;
     right: 0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* ========================= */
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .file-uploader-container {
+      width: 85vw;
+    }
+  
+    .file-uploader-card {
+      padding: 24px;
+    }
+  
+    .file-upload-title {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* ========================= */
+  /* Mobile */
+  @media (max-width: 600px) {
+    .file-uploader-container {
+      width: 95vw;
+    }
+  
+    .file-uploader-card {
+      padding: 16px;
+      border-radius: 8px;
+    }
+  
+    .file-upload-header {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .file-upload-title {
+      text-align: center;
+      width: 100%;
+      font-size: 1.2rem;
+    }
+  
+    .reset-btn {
+      position: static;
+      align-self: center;
+      font-size: 0.85rem;
+      padding: 5px 10px;
+    }
   }
   
